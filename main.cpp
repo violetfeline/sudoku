@@ -5,7 +5,9 @@
 int main() {
   Sudoku s;
   s.enterDigits();
-  s.solve();
-  s.print();
+  if (s.solve())
+    s.print();
+  else
+    std::cout << "Unsolvable!" << std::endl;
   return 0;
 }

@@ -63,18 +63,18 @@ bool Sudoku::check() {
   return true;
 }
 
-void Sudoku::solve() {
+bool Sudoku::solve() {
   while (next()) {
       do {
         while (++table[y][x] > 9) {
           table[y][x] = 0;
           if (!prev()) {
-            std::cout << "Unsolvable!" << std::endl;
-            return;
+            return false;
           }
         }
       } while (!check());
     }
+  return true;
 }
 
 void Sudoku::enterDigits() {

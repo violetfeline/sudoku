@@ -14,10 +14,8 @@ private:
   bool check();
 public:
   Sudoku() {};
-  void solve();
+  bool solve();
   void enterDigits();
   void print();
-
-
 };
 
